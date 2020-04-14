@@ -85,6 +85,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Additional Paragraph 1',
+    date: 'April 14, 2020',
+    firstParagraph: "St. agur blue cheese caerphilly cream cheese. Macaroni cheese stinking bishop blue castello hard cheese gouda roquefort pepper jack cheese and biscuits. The big cheese stinking bishop dolcelatte lancashire queso cheddar cheesecake monterey jack. Bocconcini cheese and biscuits.",
+
+    secondParagraph: "Cow melted cheese parmesan. Bavarian bergkase cut the cheese everyone loves edam pecorino cheese on toast who moved my cheese camembert de normandie. Cheese strings airedale say cheese emmental squirty cheese cheese strings queso halloumi. Cheese triangles melted cheese cut the cheese when the cheese comes out everybody's happy emmental.",
+
+    thirdParagraph: "Mozzarella roquefort who moved my cheese. Croque monsieur fromage frais say cheese danish fontina gouda manchego who moved my cheese bavarian bergkase. Fondue boursin st. agur blue cheese cottage cheese fromage feta fromage cheese on toast. Cow caerphilly cauliflower cheese macaroni cheese cheese on toast fromage frais gouda macaroni cheese. Cheesecake everyone loves babybel feta."
+  },
+  {
+    title: 'Additional Paragraph 2',
+    date: 'April 15, 2020',
+    firstParagraph: "Lorem ipsizzle dolizzle sit daahng dawg, rizzle adipiscing elit. Fo shizzle mah nizzle fo rizzle, mah home g-dizzle bizzle velizzle, fo shizzle mah nizzle fo rizzle, mah home g-dizzle volutpizzle, suscipit quizzle, ass vizzle, shizznit. Check out this cool tortor. Sed fo. Gangsta izzle dolizzle dapibus turpizzle mah nizzle bizzle. Mauris pimpin' nibh rizzle turpizzle. Dang izzle i'm in the shizzle. funky fresh fo shizzle tellivizzle. In hac mah nizzle platea dizzle. Mofo ass. Dawg tellus dawg, pretizzle shit, mattizzle its fo rizzle, rizzle vitae, shizzlin dizzle. The bizzle pizzle. Integer semper velit doggy purus.",
+
+    secondParagraph: "Bizzle check it out diam quis nisi sure mollizzle. Suspendisse potenti. Morbi odio. Vivamizzle dang. Brizzle check it out. Crunk maurizzle gangsta, bow wow wow a, fo shizzle mah nizzle fo rizzle, mah home g-dizzle sit crazy, black in, pede. Pellentesque gravida. Vestibulizzle orci mi, volutpizzle izzle, sagittizzle sizzle, fizzle semper, velizzle. Cras in ipsizzle. Fizzle volutpizzle felis vizzle orci. Cras break yo neck, yall justo fo shizzle mah nizzle fo rizzle, mah home g-dizzle purus sodales ornare. Break it down venenatizzle justo the bizzle that's the shizzle. Nunc sure. Suspendisse venenatis that's the shizzle lacizzle. Curabitizzle shizznit ante. Check it out pharetra, leo eu i'm in the shizzle hendrerizzle, bling bling felis boom shackalack sizzle, the bizzle aliquizzle magna felis luctus pede. Mah nizzle a check it out. Class aptent taciti fizzle izzle litora torquent tellivizzle conubia nostra, pizzle inceptos sheezy. Aliquizzle interdizzle, fo shizzle sheezy for sure nonummy, fo shizzle orci viverra check it out, tellivizzle semper risus arcu dawg sizzle.",
+
+    thirdParagraph: "Donec posuere boom shackalack i'm in the shizzle. Yippiyo a elit izzle nibh pretizzle shiznit. Maecenas a fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Dawg in lacus sizzle izzle elementum fo shizzle mah nizzle fo rizzle, mah home g-dizzle. Nunc at yo sit hizzle eros ultricizzle hizzle. In bling bling tortizzle, ultricizzle dawg, hendrerit quis, adipiscing shizznit, crunk. Shizzle my nizzle crocodizzle check out this leo, aliquizzle fo shizzle, pharetra nizzle, black sizzle, turpis. Fo dope. Crizzle lorem. Prizzle fo shizzle erat izzle libero shiz fo. Fusce izzle augue gizzle shit ullamcorpizzle doggy. Phasellizzle own yo' sapizzle crunk erizzle. Suspendisse ma nizzle for sure, sollicitudizzle sed, gizzle my shizz, commodo nizzle, justo. Away black uhuh ... yih! ligula. Its fo rizzle feugizzle, gangsta a fizzle tempor, sapizzle metizzle bow wow wow ante, egizzle phat the bizzle enizzle da bomb bling bling. Phasellus fizzle leo, imperdizzle tellivizzle, tempus sure, semper mammasay mammasa mamma oo sa, sapizzle. Sheezy the bizzle magna vel ipsum. Sizzle fo nibh, suscipit vitae, vestibulum crunk, bizzle brizzle, for sure. Mauris crunk maurizzle. Fo shizzle non doggy sizzle owned risizzle shizznit congue."
   }
 ];
 
@@ -113,7 +131,7 @@ const data = [
 
 */
 
-/* Step 1 */
+
   function makeArticle(title, date, firstParagrah, secondParagraph, thirdParagraph) {
     const article = document.createElement("div");
     const articleTitle = document.createElement("h2");
@@ -123,6 +141,11 @@ const data = [
     const paragraphThree = document.createElement("p");
     const expandButton = document.createElement("span");
 
+    //giving each element a class name
+    article.classList.add("article");
+    articleDate.classList.add("date");
+    expandButton.classList.add("expandButton");
+    
     //adding each element to the div
     article.append(articleTitle);
     article.append(articleDate);
@@ -130,11 +153,6 @@ const data = [
     article.append(paragraphTwo);
     article.append(paragraphThree);
     article.append(expandButton);
-
-    //giving each element a class name
-    article.classList.add("article");
-    articleDate.classList.add("date");
-    expandButton.classList.add("expandButton");
 
     //adding text content to each element
     articleTitle.textContent = title;
