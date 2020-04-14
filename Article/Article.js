@@ -114,17 +114,7 @@ const data = [
 */
 
 /* Step 1 */
-
-/* <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div> */
-
-  function newArticle(title, date, firstParagrah, secondParagraph, thirdParagraph) {
+  function makeArticle(title, date, firstParagrah, secondParagraph, thirdParagraph) {
     const article = document.createElement("div");
     const articleTitle = document.createElement("h2");
     const articleDate = document.createElement("p");
@@ -154,4 +144,15 @@ const data = [
     paragraphThree.textContent = thirdParagraph; 
     expandButton.textContent = "More";
 
+    //add event listener to expand button
+    expandButton.addEventListener("click", () => {
+      article.classList.toggle("article-open");
+    })
+
+    return article;
   }
+
+  data.forEach( el => {
+    const newArticle = makeArticle(el);
+    document.querySelector(".articles").appendChild(newArticle);
+  })
