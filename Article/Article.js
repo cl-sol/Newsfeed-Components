@@ -126,10 +126,32 @@ const data = [
 
   function newArticle(title, date, firstParagrah, secondParagraph, thirdParagraph) {
     const article = document.createElement("div");
-    const title = document.createElement("h2");
-    const date = document.createElement("p");
+    const articleTitle = document.createElement("h2");
+    const articleDate = document.createElement("p");
     const paragraphOne = document.createElement("p");
     const paragraphTwo = document.createElement("p");
     const paragraphThree = document.createElement("p");
+    const expandButton = document.createElement("span");
+
+    //adding each element to the div
+    article.append(articleTitle);
+    article.append(articleDate);
+    article.append(paragraphOne);
+    article.append(paragraphTwo);
+    article.append(paragraphThree);
+    article.append(expandButton);
+
+    //giving each element a class name
+    article.classList.add("article");
+    articleDate.classList.add("date");
+    expandButton.classList.add("expandButton");
+
+    //adding text content to each element
+    articleTitle.textContent = title;
+    articleDate.textContent = date;
+    paragraphOne.textContent = firstParagrah;
+    paragraphTwo.textContent = secondParagraph;
+    paragraphThree.textContent = thirdParagraph; 
+    expandButton.textContent = "More";
 
   }
