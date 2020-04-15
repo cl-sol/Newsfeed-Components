@@ -49,24 +49,27 @@ let menuItems = [
     menu.append(menuItem);
 
     //step 2
-    menuItems.forEach(el => {
+    array.forEach(el => {
       const menuItemList = document.createElement("li");
-      list.textContent = el;
+      menuItemList.textContent = el;
 
       menuItem.append(menuItemList);
     })
 
     //step 3 & 4
-    const menuButton = document.querySelector(".menu-button");
-    menuButton.addEventListener("click", () => {
-      menu.classList.toggle("menu--open");
-    })
 
     return menu;
   }
 
-  //step 6
-  menuItems.forEach(el => {
-    const header = document.querySelector(".header");
-    header.appendChild(dropMenu);
+  const header = document.querySelector(".header");
+    const test = dropMenu(menuItems)
+    header.appendChild(test);
+
+
+
+  const menuButton = document.querySelector(".menu-button");
+  menuButton.addEventListener("click", () => {
+    test.classList.toggle("menu--open");
   })
+
+  

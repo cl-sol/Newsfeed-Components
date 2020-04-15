@@ -132,7 +132,7 @@ const data = [
 */
 
 
-  function makeArticle(title, date, firstParagrah, secondParagraph, thirdParagraph) {
+  function makeArticle(el) {
     const article = document.createElement("div");
     const articleTitle = document.createElement("h2");
     const articleDate = document.createElement("p");
@@ -155,11 +155,11 @@ const data = [
     article.append(expandButton);
 
     //adding text content to each element
-    articleTitle.textContent = title;
-    articleDate.textContent = date;
-    paragraphOne.textContent = firstParagrah;
-    paragraphTwo.textContent = secondParagraph;
-    paragraphThree.textContent = thirdParagraph; 
+    articleTitle.textContent = el.title;
+    articleDate.textContent = el.date;
+    paragraphOne.textContent = el.firstParagrah;
+    paragraphTwo.textContent = el.secondParagraph;
+    paragraphThree.textContent = el.thirdParagraph; 
     expandButton.textContent = "More";
 
     //add event listener to expand button
